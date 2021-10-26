@@ -52,7 +52,9 @@ namespace cards
             Cards = Cards.OrderBy(item => rnd.Next()).ToList();
         }
 
-        public void Deal(int numberCards, Player player){
+        public void Deal(int numberCards, Player[] players){
+
+            foreach (Player player in players){
 
             List<Card> hand = new List<Card>();
 
@@ -65,6 +67,7 @@ namespace cards
 
             }
             player.Hand = new Hand(hand);
+        }
         }
     }
 }

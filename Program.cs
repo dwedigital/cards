@@ -7,22 +7,18 @@ namespace cards
         static void Main(string[] args)
         {
             Deck deck = new Deck(true);
-            //deck.Shuffle();
-            foreach (Card card in deck)
-            {
-                Console.WriteLine($"{card.Value} {card.Suit}");
-            }
+            deck.Shuffle();
+
 
             Player Dave = new Player("Dave");
-            deck.Deal(5, Dave);
+            Player James = new Player("James");
+            deck.Deal(5, new Player[]{ Dave, James });
             Console.WriteLine("================================================================");
             foreach (Card card in Dave.Hand)
             {
                 Console.WriteLine($"{card.Value} {card.Suit}");
             }
 
-            Player James = new Player("James");
-            deck.Deal(5, James);
             Console.WriteLine("================================================================");
             foreach (Card card in James.Hand)
             {
