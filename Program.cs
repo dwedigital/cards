@@ -10,17 +10,17 @@ namespace cards
             deck.Shuffle();
 
 
-            Player Dave = new Player("Dave");
-            Player James = new Player("James");
-            deck.Deal(5, new Player[]{ Dave, James });
+            Player dave = new Player("Dave");
+            Player james = new Player("James");
+            deck.Deal(5, new Player[]{ dave, james });
             Console.WriteLine("================================================================");
-            foreach (Card card in Dave.Hand)
+            foreach (Card card in dave.Hand)
             {
                 Console.WriteLine($"{card.Value} {card.Suit}");
             }
 
             Console.WriteLine("================================================================");
-            foreach (Card card in James.Hand)
+            foreach (Card card in james.Hand)
             {
                 Console.WriteLine($"{card.Value} {card.Suit}");
             }

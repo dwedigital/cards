@@ -10,7 +10,7 @@ namespace cards
 
         public Deck(bool aceHigh = true)
         {
-            string[] suits = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
+            string[] suits = new string[] { "♠", "♥", "♦", "♣" };
             foreach (string suit in suits)
             {
                 for (int i = (aceHigh ? 2 : 1); i <= (aceHigh ? 14 : 13); i++)
@@ -59,11 +59,8 @@ namespace cards
             List<Card> hand = new List<Card>();
 
             for(int i = 0; i < numberCards; i++){
-                System.Random rnd = new System.Random();
-
-                int pick = rnd.Next(1,Cards.Count);
-                hand.Add(Cards[pick]);
-                Cards.RemoveAt(pick);
+                hand.Add(Cards[i]);
+                Cards.RemoveAt(i);
 
             }
             player.Hand = new Hand(hand);
