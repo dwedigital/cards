@@ -34,5 +34,11 @@ namespace cards{
         {
             get { return Cards[position]; }
         }
+
+        public void Display(){
+            foreach (Card card in Cards){
+                System.Console.WriteLine($"{card.Value} {card.Suit}");
+            }
+        }
     }
 }
